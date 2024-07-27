@@ -1,4 +1,4 @@
-# testdome-angular-questions
-Test Dome Angular Interview Questions
+# Test Dome Angular Public Interview Questions
+[Test Dome](https://www.testdome.com/library?page=1&skillArea=40&questionSets=public)
 
-[Test Dome](https://www.testdome.com/d/angular-interview-questions/77)
+Note: TestDome is not the best resource to practice Angular, as the questions have not yet been updated to reflect modern Angular.
