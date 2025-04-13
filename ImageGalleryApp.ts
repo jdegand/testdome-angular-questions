@@ -1,20 +1,21 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  template: `<div>
-              <div class="image" *ngFor="let link of links">
-              <img src={{link}}>
-              <button class="remove" (click)="remove($event)">X</button>
-  </div>
-</div>`
+    selector: 'app-root',
+    template: `<div>
+                  @for (link of links; track link; let i = $index) {
+                    <div class="image">
+                      <img [src]="link" alt="" />
+                      <button class="remove" (click)="remove(i)">X</button>
+                    </div>
+                  }
+                </div>`,
 })
-
 export class ImageGallery {
-  @Input() links: string[];
-  
-   remove(event) {
-     event.target.closest('div.image').remove();
-   }
-      
+    links: string[] = ['link1.jpg', 'link2.jpg', 'link3.jpg'];
+
+    remove(index: number) {
+        // could also use splice(index, 1) to 100%
+        this.links = [...this.links.slice(0, index), ...this.links.slice(index + 1)];
+    }
 }
